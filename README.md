@@ -1,86 +1,102 @@
 
+# Backend for Book Management System 📚
 
+This repository contains the backend implementation for the Book Management System, providing APIs for user authentication, book management, comments, and wishlist functionality.
 
-
-
+---
 
 ## Features 💡
 
-- User Authentication & Authorization with related CRUD OPERATIONS
-- Book Management ( CRUD Operations)
-- Client and Admin functionality 
-- Comments on Book Feature
-- Wishlist Book feature
+- **User Authentication & Authorization**: Secure user login and registration.
+- **Book Management**: CRUD operations for books.
+- **Admin Controls**: Privileged operations for administrators.
+- **Comment Feature**: Add comments to books.
+- **Wishlist Feature**: Add or remove books from the wishlist.
 
+---
 
+## Environment Variables
 
-
-## Environment Variables 
-
-To run this project, you will need to add the following environment variables to your .env file
-
-
-- For Backend 
-
+To run this project, create a `.env` file in the root directory and add the following environment variables:
 
 ```bash
 PORT=8000
-MONGODB_URI=
+MONGODB_URI=<your_mongodb_connection_string>
 CORS_ORIGIN=*
-
-ACCESS_TOKEN_SECRET=
+ACCESS_TOKEN_SECRET=<your_access_token_secret>
 ACCESS_TOKEN_EXPIRY=1d
-REFRESH_TOKEN_SECRET=
+REFRESH_TOKEN_SECRET=<your_refresh_token_secret>
 REFRESH_TOKEN_EXPIRY=10d
-
-CLOUDINARY_CLOUD_NAME=
-CLOUDINARY_API_KEY=
-CLOUDINARY_API_SECRET=
-
+CLOUDINARY_CLOUD_NAME=<your_cloudinary_cloud_name>
+CLOUDINARY_API_KEY=<your_cloudinary_api_key>
+CLOUDINARY_API_SECRET=<your_cloudinary_api_secret>
 ```
 
-- For Frontend
-
-```
-VITE_URL=
-```
-
-
-
+---
 
 ## Run Locally
 
-For both Frontend and Server- 
-
-Clone the project 
-
+### Step 1: Clone the Repository
 
 ```bash
-  git clone **url**
+git clone <repository_url>
 ```
 
-Install dependencies
+### Step 2: Navigate to the Project Directory
 
 ```bash
-  npm install
+cd <project_directory>
 ```
 
-Start the server
+### Step 3: Install Dependencies
 
 ```bash
-  npm run dev
+npm install
 ```
 
-The server runs on port 8000 and frontend on port 5173
+### Step 4: Start the Server
 
+```bash
+npm run dev
+```
+
+The backend will run on `http://localhost:8000`.
+
+---
+
+## API Endpoints
+
+### User Authentication
+
+- `POST /auth/register`: Register a new user.
+- `POST /auth/login`: Login with email and password.
+
+### Books
+
+- `GET /books`: Fetch all books.
+- `POST /books`: Add a new book (Admin only).
+- `PATCH /books/:id`: Update a book (Admin only).
+- `DELETE /books/:id`: Delete a book (Admin only).
+
+### Comments
+
+- `POST /books/:id/comment`: Add a comment to a book.
+
+### Wishlist
+
+- `GET /books/toggleWishlist/:id`: Add/remove a book from the wishlist.
+
+---
 
 ## Tech Stack
 
-**Server  :** 
-Node, Express , MongoDB ,Mongoose , JWT , Cloudinary
+- **Server**: Node.js, Express.js
+- **Database**: MongoDB, Mongoose
+- **Authentication**: JWT (JSON Web Tokens)
+- **File Storage**: Cloudinary for image uploads
 
-**Frontend :**
-Vite+ReactJs , React-router-dom , Tailwind css
+---
 
+## Deployment
 
-
+Deploy your backend using any platform like Heroku, Render, or Vercel. Make sure to set all environment variables in the deployment platform.
