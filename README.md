@@ -1,7 +1,7 @@
 
-# Backend for Book Management System 📚
+# Backend for Library Management System 📚
 
-This repository contains the backend implementation for the Book Management System, providing APIs for user authentication, book management, comments, and wishlist functionality.
+This repository contains the backend implementation for the Library Management System, providing APIs for user authentication, book management, comments, and wishlist functionality.
 
 ---
 
